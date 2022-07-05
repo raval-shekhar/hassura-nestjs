@@ -1,0 +1,46 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Users {
+  """id"""
+  id: ID!
+
+  """first_name"""
+  firstName: String!
+
+  """last_name"""
+  lastName: String!
+
+  """gender"""
+  gender: String!
+}
+
+type Location {
+  """latitude"""
+  lat: Float!
+
+  """longitude"""
+  long: Float!
+}
+
+type UserTracking {
+  """user details"""
+  user: Users!
+
+  """Geometry point"""
+  location: Location!
+}
+
+type Query {
+  listUsers(userInput: UserInput!): [Users!]!
+  userTracking(radius: Int!): [UserTracking!]!
+}
+
+input UserInput {
+  """limit"""
+  limit: Int!
+
+  """offset"""
+  offset: Int!
+}
